@@ -1,0 +1,54 @@
+
+
+
+<div class="upload-form">
+
+<div class = "well">
+    <% if !@resume.errors.empty? %>
+    <div class = "alert alert-error">
+        <ul>
+            <% @resume.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+        
+    </div>
+<% end %>
+
+    <%= form_for @resume, url:resume_uplaod_path, local: true do |f| %>
+        <%= f.hidden_field :name %>
+        <%= f.label :attachment %>
+        <%= f.file_field :attachment %>
+        <%= f.submit "Upload", class: "btn btn-primary" %>
+    <% end %>
+    <%= render "devise/shared/links" %>
+    <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %>
+
+
+<table class = "table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>User Name(first + last)</th>
+            <th>Contact Number</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @user.each do |resume| %>
+            
+            <tr>
+                <td><%= resume.email %></td>
+                <td><%= resume.first_name + " " +resume.last_name %></td>
+                <td><%= resume.contact_number %></td>
+            </tr>
+            
+        <% end %>
+    </tbody>
+   
+</table>
+
+</div>
+
+</div>
+

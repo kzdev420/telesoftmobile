@@ -1,0 +1,116 @@
+  
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	<div class="limiter">
+		<div class="container-login100">
+
+			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+        <%= form_for(@user, as: resource_name, url: registration_path(resource_name), :html => {:class => 'login100-form validate-form'}) do |f| %>
+					<span class="login100-form-title p-b-59">
+						Sign Up
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Name is required">
+						<span class="label-input100">First Name</span>
+						<%= f.text_field :first_name, autofocus: true, placeholder: "First Name...", class: "input100" %>
+						<span class="focus-input100"></span>
+          </div>
+          
+          <div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Last Name</span>
+						<%= f.text_field :last_name, autofocus: true, placeholder: "Last Name...", class: "input100" %>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<span class="label-input100">Email</span>
+						<%= f.email_field :email, autofocus: true, placeholder: "Email Addree..", class: "input100" %>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+            <%= f.password_field :password, placeholder: "new-password", class: "input100" %>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+						<span class="label-input100">Repeat Password</span>
+            <%= f.password_field :password_confirmation, placeholder: "new-password", class: "input100" %>
+            <span class="focus-input100"></span>
+          </div>
+          
+          <div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Birthday</span>
+						<%= f.text_field :birthday, autofocus: true, placeholder: "Birthday...", class: "input100" %>
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Contact Number</span>
+						<%= f.text_field :contact_number, autofocus: true, placeholder: "Contact Number...", class: "input100" %>
+						<span class="focus-input100"></span>
+          </div>
+          
+          <div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Hobbies</span>
+						<%= f.text_field :hobbies, autofocus: true, placeholder: "Hobbies...", class: "input100" %>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-m w-full p-b-33">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								<span class="txt1">
+									I agree to the
+									<a href="#" class="txt2 hov1">
+										Terms of User
+									</a>
+								</span>
+							</label>
+						</div>
+
+						
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+                Sign Up
+                <%= f.submit "" %>
+							</button>
+            </div>
+            
+            <%= link_to 'Sign in <i class="fa fa-long-arrow-right m-l-5"></i>'.html_safe, new_session_path(resource_name), class: 'dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30' %><br />
+
+						<!-- <a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+							Sign in
+							<i class="fa fa-long-arrow-right m-l-5"></i>
+						</a> -->
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>

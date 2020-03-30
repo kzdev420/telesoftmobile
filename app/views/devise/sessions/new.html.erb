@@ -1,0 +1,31 @@
+<div class = "login_form">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="form-group">
+        <h3>Login</h3>
+        <span>Already did you uplaod your resume? First need to uplaod resume if you didn't it.</span>
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <div class="input-box">
+            <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-box">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Passphrase" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-box">
+            <%= f.submit "Login", class: "continue-btn" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="login-footer-links">
+        <%= link_to 'Uplaod Resume', resume_path, class: "pull-left" %>
+        <%= link_to 'Forgot password?', new_user_password_path, class: "pull-right" %>
+      </div>
+    </div>
+  </div>
+</div>
